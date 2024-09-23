@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task List</title>
 </head>
 <body>
-    {% for task in tasks %}
-        <P>{{ task.title }}</P>
+    <h1>Task List</h1>
+    <ul>
+    {% for task in task %}
+        <li>{{ task }}</li>
+    {% empty %}
+        <li>No Tasks found</li>
     {% endfor %}
-    
+    </ul>
+
+    <a href="{% url 'add' %}">Add Task</a>
 </body>
 </html>
